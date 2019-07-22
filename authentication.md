@@ -76,7 +76,7 @@
     - https://hackerone.com/reports/202425
     - https://hackerone.com/reports/128777
 
-Logic flaw leading to bypass 
+- [ ] Check for Logic flaws leading to bypass 
     - https://hackerone.com/reports/178293
     - https://hackerone.com/reports/7369​
     - https://hackerone.com/reports/418767​
