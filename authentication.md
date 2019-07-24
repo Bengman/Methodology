@@ -55,6 +55,11 @@
 - [ ] Test for Sensitive Token in URL
 - [ ] Test for Token Leakage via Referer - Over HTTP or 3rd party
 
+A good acccount recovery flow looks like this:
+```
+When a user wants to reset a password - send him a link with a long and unpredictable token. Make this link valid for short period of time. When the token has already been used, make this link invalid.. The user enters new password twice (add a CSRF token to the form). When successfully done, the user gets an information that the password has been changed (no need to disclose the login of the user), Don't automatically log in a user - the user should provide a username and a new password to log in.
+```
+
 # Test any "remember me" function
 - [ ] Activate any “remember me” functionality, and determine whether the functionality indeed does fully “remember” the user or whether it remem- bers only his username and still requires him to enter a password on sub- sequent visits. If the latter is the case, the functionality is much less likely to expose any security flaw.
 - [ ] Closely inspect all persistent cookies that are set, and also any data that is persisted in other local storage mechanisms, such as Internet Explorer’s userData, Silverlight isolated storage, or Flash local shared objects. Look for any saved data that identifies the user explicitly or appears to contain some predictable identifier of the user.
