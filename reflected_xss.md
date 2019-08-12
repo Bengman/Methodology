@@ -3,6 +3,7 @@
 - [ ] Choose a unique arbitrary string that does not appear anywhere within the application and that contains only alphabetical characters. Submit this string as every parameter to every page, targeting only one parameter at a time (Note that both GET and POST requests need to be tested).
 - [ ] Monitor the application’s responses for any appearance of this same string.
 - [ ] Submit the follwing payload `'';!--"<XSS>=&{()}` where reflection was detected. Check which characters gets encoded or truncated. If there is a filter in place, try to detect what signature it is using.
+- [ ] Establish in which context the xss is in (between HTML tags,  in HTML tag attributes or in Javascript etc).
 
 # Bypassing Signature-Based XSS Filters
 - [ ] Starting with the opening tag name, the most simple and naive filters can be bypassed simply by varying the case of the characters used: `<iMg onerror=alert(1) src=a>`
