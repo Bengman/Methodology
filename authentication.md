@@ -83,9 +83,10 @@ When a user wants to reset a password - send him a link with a long and unpredic
 
 - [ ] Check for Logic flaws leading to bypass 
     - https://hackerone.com/reports/178293
-    - https://hackerone.com/reports/7369​
-    - https://hackerone.com/reports/418767​
-- [ ] Check if OTP code does not expire ​ - https://hackerone.com/reports/67660​
+    - https://hackerone.com/reports/7369
+    - https://hackerone.com/reports/418767
+- [ ] Check if OTP code does not expire - https://hackerone.com/reports/67660
+- [ ] Check that active sessions are terminated when MFA is enabled - https://hackerone.com/reports/667739
 - [ ] Repeat the login process numerous times with various malformed requests:
    - a. Try performing the login steps in a different sequence.
    - b. Try proceeding directly to any given stage and continuing from there.
