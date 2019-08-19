@@ -33,6 +33,10 @@
 
 - [ ] Test for Weak Registration Implementation - Over HTTP
 
+(blind xss)
+
+- [ ] Submit a blind xss payload as the username, adress or any other potential information during registration.
+
 # Test account recovery function
 
 - [ ] Understand how the forgotten password function works by doing a complete walk-through using an account you control.
