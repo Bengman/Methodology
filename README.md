@@ -6,6 +6,10 @@
 + Authenticated ares (todo)
 + Purchase/cart (todo)
 + Contact forms (todo)
++ JWT (todo)
++ OAuth2 (todo)
++ SAML (todo)
++ API (todo)
 
 ## By vulnerability
 + [Reflected XSS](https://github.com/Bengman/Methodology/blob/master/reflected_xss.md)
@@ -15,6 +19,4 @@
 + Web Cache Poisoning (todo)
 + XXE (todo)
 + SSRF (todo)
-+ JWT (todo)
-+ OAuth2 (todo)
-+ SAML (todo)
+
