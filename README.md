@@ -18,6 +18,6 @@
 + [CSRF](https://github.com/Bengman/Methodology/blob/master/csrf.md)
 + SQL Injection (todo)
 + Web Cache Poisoning (todo)
-+ XXE (https://github.com/Bengman/Methodology/blob/master/xxe.md)
++ [XXE](https://github.com/Bengman/Methodology/blob/master/xxe.md)
 + SSRF (todo)
 
