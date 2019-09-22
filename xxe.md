@@ -11,16 +11,22 @@ There are various types of XXE attacks:
 
 - [ ] Submit XML requests where json is.
  - https://blog.netspi.com/playing-content-type-xxe-json-endpoints/
+ - https://hackerone.com/reports/106797
 - [ ] Change GET to POST and submit xml.
 - https://hackerone.com/reports/154096
 - [ ] Via SAML assertions.
 - https://seanmelia.files.wordpress.com/2016/01/out-of-band-xml-external-entity-injection-via-saml-redacted.pdf & https://httpsonly.blogspot.se/2017/01/0day-writeup-xxe-in-ubercom.html
+- [ ] In SOAP requests
+- https://hackerone.com/reports/36450
 - [ ] In SVG files.
  - http://esoln.net/Research/2017/03/30/xxe-in-lithium-community-platform/
 - [ ] In PDF files
 - [ ] In MS Office files, word, excel, ppt files. 
 - https://hackerone.com/reports/105434
-
+- https://hackerone.com/reports/334488
+- [ ] Logins over xml
+- https://hackerone.com/reports/105753
+- https://hackerone.com/reports/105980
 
 ## Payloads
 
