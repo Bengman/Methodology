@@ -10,6 +10,7 @@
 + OAuth2 (todo)
 + SAML (todo)
 + API (todo)
++ JIRA (todo)
 
 ## By vulnerability
 + [Reflected XSS](https://github.com/Bengman/Methodology/blob/master/reflected_xss.md)
