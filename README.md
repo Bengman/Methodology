@@ -3,8 +3,8 @@
 ## Areas of interest
 + [Authentication](https://github.com/Bengman/Methodology/blob/master/authentication.md)
 + [File uploads](https://github.com/Bengman/Methodology/blob/master/file_upload.md)
-+ Authenticated ares (todo)
-+ Purchase/cart (todo)
++ Authenticated areas (todo)
++ E-commerce purchase/cart flow (todo)
 + Contact forms (todo)
 + JWT (todo)
 + OAuth2 (todo)
