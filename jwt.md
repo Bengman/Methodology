@@ -21,3 +21,21 @@
 - [ ] Check for time constant verification for HMAC.
 - [ ] Check for any keys or secrets in the source code.
 - [ ] Check that keys and secrets are different between environments.
+
+
+### Crack
+```
+hashcat --stdout test_wordlist.txt -r /usr/share/hashcat/rules/best64.rule | hashcat -m 16500 jwt.txt
+```
+
+### Encode
+
+```
+import jwt
+encoded = jwt.encode({'some': 'payload'}, 'secret', algorithm='HS256')
+```
+```
+import hmac
+h = hmac.new(secret, data, hashlib.sha256)
+signature = base64.urlsafe_b64encode(binascii.a2b_hex(h.hexdigest())).rstrip("=")
+```
