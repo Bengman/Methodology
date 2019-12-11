@@ -6,7 +6,7 @@
 + Authenticated areas (todo)
 + E-commerce purchase/cart flow (todo)
 + Contact forms (todo)
-+ JWT (todo)
++ [JWT](https://github.com/Bengman/Methodology/blob/master/jwt.md)
 + OAuth2 (todo)
 + SAML (todo)
 + API (todo)
