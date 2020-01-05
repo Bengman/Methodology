@@ -4,7 +4,7 @@
 for tracking user sessions, and that employs request parameters that an
 attacker can fully determine in advance.
 - [ ] Create an HTML page that issues the desired request without any user
-interaction. For GET requests, you can place an <img> tag with the src
+interaction. For GET requests, you can place an \<img\> tag with the src
 attribute set to the vulnerable URL. For POST requests, you can create a
 form that contains hidden fields for all the relevant parameters required
 
