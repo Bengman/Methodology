@@ -15,9 +15,15 @@ form that contains hidden fields for all the relevant parameters required
 - [ ] Submit an empty CSRF-token.
 - [ ] Change one character. Sometimes a site will only check the length of a CSRF token (silly I know..). Try change one character (so it's the same length) and see what happens.
 - [ ] Try using the token from one account when logged in with another. Some applications do not validate that the token belongs to the same session as the user who is making the request. Instead, the application maintains a global pool of tokens that it has issued and accepts any token that appears in this pool.
+
+### JSON / XML CSRF
+- [ ] Check if the Content-Type is forced to be JSON or can it be changed to text/plain?
 - [ ] Try using Flash to bypass CSRF-protections. 
   - https://hackerone.com/reports/44146
+  - https://github.com/sp1d3r/swf_json_csrf
+  - https://blog.appsecco.com/exploiting-csrf-on-json-endpoints-with-flash-and-redirects-681d4ad6b31b
 
+### Referer
 Some sites use the Referer-header for CSRF protection. If so:
 - [ ] https://www.yoursite.com/https://www.theirsite.com/ Some sites only check if it CONTAINS their website url, meaning we can just create a file/folder on our site to send the CSRF request from.
 - [ ] Send a blank referer. Include the `<meta name="referrer" content="never">` tag in a CSRF poc.
