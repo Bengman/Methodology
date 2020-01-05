@@ -17,7 +17,8 @@ form that contains hidden fields for all the relevant parameters required
 - [ ] Try using the token from one account when logged in with another. Some applications do not validate that the token belongs to the same session as the user who is making the request. Instead, the application maintains a global pool of tokens that it has issued and accepts any token that appears in this pool.
 
 ### JSON / XML CSRF
-- [ ] Check if the Content-Type is forced to be JSON or can it be changed to text/plain?
+- [ ] Check if the Content-Type is forced to be JSON or can it be changed to text/plain and useed with parameter padding?
+  - https://www.geekboy.ninja/blog/tag/json-csrf/
 - [ ] Try using Flash to bypass CSRF-protections. 
   - https://hackerone.com/reports/44146
   - https://github.com/sp1d3r/swf_json_csrf
