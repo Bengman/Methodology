@@ -1,7 +1,6 @@
 # CSRF
 
-- [ ] Find an application function that can be used to perform some sensi-
-tive action on behalf of an unwitting user, that relies solely on cookies
+- [ ] Find an application function that can be used to perform some sensitive action on behalf of an unwitting user, that relies solely on cookies
 for tracking user sessions, and that employs request parameters that an
 attacker can fully determine in advance.
 - [ ] Create an HTML page that issues the desired request without any user
