@@ -61,7 +61,12 @@
 
 A good acccount recovery flow looks like this:
 ```
-When a user wants to reset a password - send him a link with a long and unpredictable token. Make this link valid for short period of time. When the token has already been used, make this link invalid.. The user enters new password twice (add a CSRF token to the form). When successfully done, the user gets an information that the password has been changed (no need to disclose the login of the user), Don't automatically log in a user - the user should provide a username and a new password to log in.
+When a user wants to reset a password 
+- send him a link with a long and unpredictable token. 
+- Make this link valid for short period of time. 
+- When the token has already been used, make this link invalid.. 
+- The user enters new password twice (add a CSRF token to the form). When successfully done, the user gets an information that the password has been changed (no need to disclose the login of the user). 
+- Don't automatically log in a user - the user should provide a username and a new password to log in.
 ```
 
 # Test any "remember me" function
