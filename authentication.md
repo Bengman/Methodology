@@ -37,6 +37,15 @@
 
 - [ ] Submit a blind xss payload as the username, adress or any other potential information during registration.
 
+(username uniqueness)
+
+- [ ] If self-registration is possible, attempt to register the same username twice with different passwords.
+- [ ] If the application blocks the second registration attempt, you can exploit this behavior to enumerate existing usernames even if this is not possible on the main login page or elsewhere. Make multiple registration attempts with a list of common usernames to identify the already registered names that the application blocks.
+- [ ] If the registration of duplicate usernames succeeds, attempt to register the same username twice with the same password, and determine the application’s behavior:
+   -  a. If an error message results, you can exploit this behavior to carry out a brute-force attack, even if this is not possible on the main login page. Target an enumerated or guessed username, and attempt to register this username multiple times with a list of common passwords. When the application rejects a specific password, you have probably found the existing password for the targeted account.
+   -  b. If no error message results, log in using the credentials you speci- fied, and see what happens. You may need to register several users, and modify different data held within each account, to understand whether this behavior can be used to gain unauthorized access to other users’ accounts.
+
+
 # Test account recovery function
 
 - [ ] Understand how the forgotten password function works by doing a complete walk-through using an account you control.
@@ -77,12 +86,6 @@ When a user wants to reset a password
 - [ ] Check if a token is generated despite no checkbox checked.
     - https://hackerone.com/reports/105991
 
-# Test for Nonunique Usernames
-- [ ] If self-registration is possible, attempt to register the same username twice with different passwords.
-- [ ] If the application blocks the second registration attempt, you can exploit this behavior to enumerate existing usernames even if this is not possible on the main login page or elsewhere. Make multiple registration attempts with a list of common usernames to identify the already registered names that the application blocks.
-- [ ] If the registration of duplicate usernames succeeds, attempt to register the same username twice with the same password, and determine the application’s behavior:
-   -  a. If an error message results, you can exploit this behavior to carry out a brute-force attack, even if this is not possible on the main login page. Target an enumerated or guessed username, and attempt to register this username multiple times with a list of common passwords. When the application rejects a specific password, you have probably found the existing password for the targeted account.
-   -  b. If no error message results, log in using the credentials you speci- fied, and see what happens. You may need to register several users, and modify different data held within each account, to understand whether this behavior can be used to gain unauthorized access to other users’ accounts.
 
 # Test any multi-stage mechanisms
 - [ ] Brute force OTP
