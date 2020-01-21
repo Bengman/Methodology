@@ -62,6 +62,8 @@
     - http://yasserali.com/microsoft-careers-com-remote-password-reset/
 - [ ] Check if the token is leaked
     - https://footstep.ninja/posts/password-reset/
+- [ ] Send multiple recoveries and analyze the token for flaws.
+    - https://medium.com/bugbountywriteup/how-i-discovered-an-interesting-account-takeover-flaw-18a7fb1e5359
 
 (insecure transmission)
 - [ ] Test if Password Reset Token Sent Over HTTP
