@@ -3,8 +3,10 @@
 ## Areas of interest
 + [Authentication](https://github.com/Bengman/Methodology/blob/master/authentication.md)
 + [File uploads](https://github.com/Bengman/Methodology/blob/master/file_upload.md)
-+ Authenticated areas (todo)
++ Profile settings (todo)
 + E-commerce purchase/cart flow (todo)
++ PDF-generation (todo)
++ Posting comments (todo)
 + Contact forms (todo)
 + [JWT](https://github.com/Bengman/Methodology/blob/master/jwt.md)
 + OAuth2 (todo)
@@ -20,4 +22,5 @@
 + Web Cache Poisoning (todo)
 + [XXE](https://github.com/Bengman/Methodology/blob/master/xxe.md)
 + SSRF (todo)
++ HTML-injections
 
