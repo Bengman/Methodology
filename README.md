@@ -13,6 +13,7 @@
 + SAML (todo)
 + API (todo)
 + JIRA (todo)
++ Error pages (todo)
 
 ## By vulnerability
 + [Reflected XSS](https://github.com/Bengman/Methodology/blob/master/reflected_xss.md)
@@ -22,5 +23,8 @@
 + Web Cache Poisoning (todo)
 + [XXE](https://github.com/Bengman/Methodology/blob/master/xxe.md)
 + SSRF (todo)
-+ HTML-injections
++ HTML-injections (todo)
++ IDOR (todo)
++ Open Redirect (todo)
++ XSSI (todo)
 
