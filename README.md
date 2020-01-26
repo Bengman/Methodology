@@ -15,6 +15,7 @@
 + JIRA (todo)
 + Error pages (todo)
 + Gift Cards (todo)
++ GraphQL (todo)
 
 ## By vulnerability
 + [Reflected XSS](https://github.com/Bengman/Methodology/blob/master/reflected_xss.md)
