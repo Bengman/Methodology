@@ -14,6 +14,7 @@
 + API (todo)
 + JIRA (todo)
 + Error pages (todo)
++ Gift Cards (todo)
 
 ## By vulnerability
 + [Reflected XSS](https://github.com/Bengman/Methodology/blob/master/reflected_xss.md)
@@ -27,4 +28,4 @@
 + IDOR (todo)
 + Open Redirect (todo)
 + XSSI (todo)
-
++ Image Magic (todo)
