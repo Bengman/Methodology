@@ -5,7 +5,7 @@
 + [File uploads](https://github.com/Bengman/Methodology/blob/master/file_upload.md)
 + Profile settings (todo)
 + E-commerce purchase/cart flow (todo)
-+ PDF-generation (todo)
++ [PDF-generation](https://github.com/Bengman/Methodology/blob/master/pdf_gen.md)
 + Posting comments (todo)
 + Contact forms (todo)
 + [JWT](https://github.com/Bengman/Methodology/blob/master/jwt.md)
