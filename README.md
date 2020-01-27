@@ -10,7 +10,7 @@
 + Contact forms (todo)
 + [JWT](https://github.com/Bengman/Methodology/blob/master/jwt.md)
 + OAuth2 (todo)
-+ SAML (todo)
++ SAML(https://github.com/Bengman/Methodology/blob/master/saml.md)
 + API (todo)
 + JIRA (todo)
 + Error pages (todo)
