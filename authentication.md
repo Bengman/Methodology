@@ -108,6 +108,8 @@ When a user wants to reset a password
    - d. Use your imagination to think of other ways to access the different stages that the developers may not have anticipated.
 - [ ] If any data is submitted more than once, try submitting a different value at different stages, and see whether the login is still successful. It may be that some of the submissions are superfluous and are not actually processed by the application. It might be that the data is validated at one stage and then trusted subsequently. In this instance, try to provide the credentials of one user at one stage, and then switch at the next to actu- ally authenticate as a different user. It might be that the same piece of data is validated at more than one stage, but against different checks. In this instance, try to provide (for example) the username and password of one user at the first stage, and the username and PIN of a different user at the second stage.
 - [ ] Pay close attention to any data being transmitted via the client that was not directly entered by the user. The application may use this data to store information about the state of the login progress, and the application may trust it when it is submitted back to the server. For example, if the request for stage three includes the parameter stage2complete=true, it may be possible to advance straight to stage three by setting this value. Try to modify the values being submitted, and determine whether this enables you to advance or skip stages.
+- [ ] When disabling 2-factor auth, verify that account password is required and can not be bypassed.
+   - https://hackerone.com/reports/783258
 
 # Test for Authentication bypass
 - [ ] If /admin is blocked /Admin, /aDmin, /ADMIN
