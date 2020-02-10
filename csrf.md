@@ -23,6 +23,8 @@ form that contains hidden fields for all the relevant parameters required
   - https://hackerone.com/reports/44146
   - https://github.com/sp1d3r/swf_json_csrf
   - https://blog.appsecco.com/exploiting-csrf-on-json-endpoints-with-flash-and-redirects-681d4ad6b31b
+  
+ "Force content-Type to application/JSON and set SAMESITE cookie".
 
 ### Referer
 Some sites use the Referer-header for CSRF protection. If so:
