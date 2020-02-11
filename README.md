@@ -12,10 +12,13 @@
 + OAuth2 (todo)
 + [SAML](https://github.com/Bengman/Methodology/blob/master/saml.md)
 + API (todo)
+  - [GraphQL](https://github.com/Bengman/Methodology/blob/master/graphql.md)
+  - REST
+  - SOAP
 + JIRA (todo)
 + Error pages (todo)
 + [Gift Cards](https://github.com/Bengman/Methodology/blob/master/gift_cards.md)
-+ [GraphQL](https://github.com/Bengman/Methodology/blob/master/graphql.md)
+
 
 ## By vulnerability
 + [Reflected XSS](https://github.com/Bengman/Methodology/blob/master/reflected_xss.md)
