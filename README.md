@@ -29,4 +29,4 @@
 + IDOR (todo)
 + Open Redirect (todo)
 + XSSI (todo)
-+ Image Magic (todo)
++ [Image Magic](https://github.com/Bengman/Methodology/blob/master/image_magic.md)
