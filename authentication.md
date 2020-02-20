@@ -60,6 +60,7 @@
 - [ ] Test password resets for IDOR!
     - http://yasserali.com/how-i-could-change-your-ebay-password/
     - http://yasserali.com/microsoft-careers-com-remote-password-reset/
+    - https://medium.com/@swapmaurya20/a-simple-idor-to-account-takeover-88b8a1d2ec24
 - [ ] Check if the token is leaked
     - https://footstep.ninja/posts/password-reset/
 - [ ] Send multiple recoveries and analyze the token for flaws.
