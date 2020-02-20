@@ -20,6 +20,7 @@ There are various types of XXE attacks:
 - https://hackerone.com/reports/36450
 - [ ] In SVG files.
  - http://esoln.net/Research/2017/03/30/xxe-in-lithium-community-platform/
+ - https://0xatul.github.io/posts/2020/02/external-xml-entity-via-file-upload-svg/
 - [ ] In PDF files
 - [ ] In MS Office files, word, excel, ppt files. 
 - https://hackerone.com/reports/105434
