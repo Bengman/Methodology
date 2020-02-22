@@ -11,7 +11,7 @@
 - [ ] Manually submit several bad login attempts for an account you control, monitoring the error messages you receive.
 - [ ] After about 10 failed logins, if the application has not returned a message about account lockout, attempt to log in correctly. If this succeeds, there is probably no account lockout policy.
 - [ ] If the account is locked out, try repeating the exercise using a different account. This time, if the application issues any cookies, use each cookie for only a single login attempt, and obtain a new cookie for each subsequent login attempt.
-- [ ] Also, if the account is locked out, see whether submitting the valid pass- word causes any difference in the application’s behavior compared to an invalid password. If so, you can continue a password-guessing attack even if the account is locked out.
+- [ ] Also, if the account is locked out, see whether submitting the valid password causes any difference in the application’s behavior compared to an invalid password. If so, you can continue a password-guessing attack even if the account is locked out.
 
 (username enumeration)
 
@@ -65,6 +65,8 @@
     - https://footstep.ninja/posts/password-reset/
 - [ ] Send multiple recoveries and analyze the token for flaws.
     - https://medium.com/bugbountywriteup/how-i-discovered-an-interesting-account-takeover-flaw-18a7fb1e5359
+- [ ] If the e-mail is present in the request, try adding another e-mail.
+   - https://medium.com/@bathinivijaysimhareddy/tale-of-account-takeovers-part-1-b24e1f3c3187
 
 (insecure transmission)
 - [ ] Test if Password Reset Token Sent Over HTTP
