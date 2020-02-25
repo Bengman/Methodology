@@ -15,8 +15,11 @@ jd-gui
 - [ ] Either scan through the output manually file by file or run some searches within the extract folder for key works like ‘secret’, ‘password’, ‘user’, ‘token’, ‘api’, ‘key’, etc 
 ```
 grep -Ri "secret" . | more
-
 ```
+Secrets:
+  - `cloudinary://434762629765715:█████@reverb"` - https://hackerone.com/reports/351555
+
+
 - [ ] Look for all uses of APIs in the javax.crypto package.
 - [ ] Look for all embedded popular cryptography libraries.
 - [ ] Audit initialization and use of discovered cryptography APIs.
