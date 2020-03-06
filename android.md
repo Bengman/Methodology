@@ -1,4 +1,4 @@
-# Static Analysis
+## Static Analysis
 
 - [ ] Unpack the apk file.
 ```
@@ -70,8 +70,25 @@ apktool d app.apk; cd app;mkdir collection; find . -name \*.smali -exec sh -c 'c
 ### Automated analysis
 - [ ] Run the .apk in MobSF
 
+## Audit Content Providers
+- [ ]
 
-# Communication to backend
+## Audit Activitis
+
+- [ ] Check for exported sensitive activities without permissions (auth bypass).
+- [ ] In addition to simply starting each exposed activity, you should
+review the onCreate() method of each in search of conditional statements that
+may lead to other code paths or unexpected behavior.
+- [ ] Check if activites leak sensitive data through "Recent Application Screenshots".
+- [ ] Check all exported activities that extend `PreferenceActivity` for the class named `isValidFragment()` to allow developers to override fragment injection protections and validate which fragments can be loaded inside the activity. Performing poor validation on the fragment name supplied to this method or simply returning true in this method without performing any checks would still result in fragment injection attacks being possible.
+
+## Audit Services
+- [ ]
+
+## Audit Broadcast recievers
+
+
+## Communication to backend
 
 - [ ] Proxy traffic through burp and test as API/webapp
 
