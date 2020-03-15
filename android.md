@@ -84,7 +84,7 @@ apktool d app.apk; cd app;mkdir collection; find . -name \*.smali -exec sh -c 'c
 - [ ] Run the .apk in MobSF
 
 ## Audit Content Providers
-- [ ]
+- [ ] 
 
 ## Audit Activitis
 
@@ -96,7 +96,7 @@ may lead to other code paths or unexpected behavior.
 - [ ] Check all exported activities that extend `PreferenceActivity` for the class named `isValidFragment()` to allow developers to override fragment injection protections and validate which fragments can be loaded inside the activity. Performing poor validation on the fragment name supplied to this method or simply returning true in this method without performing any checks would still result in fragment injection attacks being possible.
 
 ## Audit Services
-- [ ]
+- [ ] 
 
 ## Audit Broadcast recievers
 
