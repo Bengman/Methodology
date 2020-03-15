@@ -16,9 +16,22 @@ jd-gui
 ```
 grep -Ri "secret" . | more
 ```
-Secrets:
-  - `cloudinary://434762629765715:█████@reverb"` - https://hackerone.com/reports/351555
+### Secrets:
 
+Sensitive:
+
+- `cloudinary://434762629765715:█████@reverb"` - // Cloudinary basic auth. "Note: You should only include the cloud_name in the value, the api secret and key should be left out of the application." https://hackerone.com/reports/351555
+
+
+Non sensitive
+
+- `CLS_ANDROID_SDK_DEVELOPER_TOKEN` - This is an internal identifier that the Firebase Crashlytics SDK uses 
+- `assets/comScore.properties:PublisherSecret=` - The ComScore Publisher Secret is a text string used to obfuscate your application users' UDID when measurements are sent to comScore servers. This is required for security, and to protect the privacy of your application's users.
+- `com_appboy_api_key` - probably safe
+- `google_api_key` - This key is not sensitive
+- `google_crash_reporting_api_key` - This is a standard configuration for Firebase products that get injected into your app as part of a standard app build using the Google Play services plugin.
+- `qualaroo_api_key` - Probably not sensitive without the api secret.
+- `APPSFLYER_DEV_KEY` - not sensitive
 
 - [ ] Look for all uses of APIs in the javax.crypto package.
 - [ ] Look for all embedded popular cryptography libraries.
