@@ -18,7 +18,7 @@ form that contains hidden fields for all the relevant parameters required
 - [ ] If the application is written in PHP, try setting empty brackets [] as the token value. 
 
 ### JSON / XML CSRF
-- [ ] Check if the Content-Type is forced to be JSON or can it be changed to text/plain and useed with parameter padding?
+- [ ] Check if the Content-Type is forced to be JSON or can it be changed to text/plain and used with parameter padding?
   - https://www.geekboy.ninja/blog/tag/json-csrf/
 - [ ] Try using Flash to bypass CSRF-protections. 
   - https://hackerone.com/reports/44146
