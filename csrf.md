@@ -15,6 +15,7 @@ form that contains hidden fields for all the relevant parameters required
 - [ ] Submit an empty CSRF-token.
 - [ ] Change one character. Sometimes a site will only check the length of a CSRF token (silly I know..). Try change one character (so it's the same length) and see what happens.
 - [ ] Try using the token from one account when logged in with another. Some applications do not validate that the token belongs to the same session as the user who is making the request. Instead, the application maintains a global pool of tokens that it has issued and accepts any token that appears in this pool.
+- [ ] If the application is written in PHP, try setting empty brackets [] as the token value. 
 
 ### JSON / XML CSRF
 - [ ] Check if the Content-Type is forced to be JSON or can it be changed to text/plain and useed with parameter padding?
