@@ -2,7 +2,10 @@
 
 
 + [Authentication](https://github.com/Bengman/Methodology/blob/master/authentication.md)
+  - OAuth2 (todo)
+  - [SAML](https://github.com/Bengman/Methodology/blob/master/saml.md)
 + [Session Management](https://github.com/Bengman/Methodology/blob/master/session_management.md)
+   - [JWT](https://github.com/Bengman/Methodology/blob/master/jwt.md) 
 + [Access Controls]
 + Input Validation
   - [Reflected XSS](https://github.com/Bengman/Methodology/blob/master/reflected_xss.md)
@@ -19,9 +22,6 @@
   - [Image Magic](https://github.com/Bengman/Methodology/blob/master/image_magic.md)
   - Posting comments (todo)
   - Contact forms (todo)
-  - [JWT](https://github.com/Bengman/Methodology/blob/master/jwt.md)
-  - OAuth2 (todo)
-  - [SAML](https://github.com/Bengman/Methodology/blob/master/saml.md)
   - JIRA (todo)
   - Error pages (todo)
   - [Gift Cards](https://github.com/Bengman/Methodology/blob/master/gift_cards.md)
