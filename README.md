@@ -1,6 +1,7 @@
 # Manual Testing Methodology
 
 
++ Content Discovery
 + [Authentication](https://github.com/Bengman/Methodology/blob/master/authentication.md)
   - OAuth2 (todo)
   - [SAML](https://github.com/Bengman/Methodology/blob/master/saml.md)
