@@ -26,6 +26,7 @@
   - JIRA (todo)
   - Error pages (todo)
   - [Gift Cards](https://github.com/Bengman/Methodology/blob/master/gift_cards.md)
+  - [Reflected IP's](https://github.com/Bengman/Methodology/blob/master/reflected_ip.md)
 + API (todo)
   - [GraphQL](https://github.com/Bengman/Methodology/blob/master/graphql.md)
   - REST
