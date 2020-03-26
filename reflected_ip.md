@@ -8,6 +8,7 @@ X-Client-IP: IP
 X-Host: IP
 X-Forwared-Host: IP
 X-Real-IP: IP
+Forwarded: IP
 ```
 - [ ] Also check if we could inject javascript that gets inserted in the page.
 - [ ] Try submitting the header with underscores instead of hyphens. Some libraries will accept that. 
