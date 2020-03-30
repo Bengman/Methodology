@@ -13,6 +13,8 @@
 - [ ] Log out of the application and try to reuse the old session.
 - [ ] Change password of the user and check that other concurrent sessions are invalidated.
 - [ ] Perform a password recovery and check that other concurrent sessions are invalidated.
+- [ ] Try terminating the session at the same time as performing some other functionality that is resource heavy.
+  - https://hackerone.com/reports/340191
 
 # Check for Session Fixation
 
