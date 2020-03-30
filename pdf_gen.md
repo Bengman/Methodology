@@ -17,3 +17,5 @@ If we could inject an HTML tag to the conversion process, in some libraries, we 
 - [ ] Test iframe tags for SSRF: `<img src=”http://127.0.0.1:445”/>` (check response time to determine open/closed ports)
 - [ ] Test object tags for SSRF: `<object data=”http://127.0.0.1:8443”/>`
 - [ ] Test fonts (CSS) tags for SSRF: `<style><iframe src=”http://169.254.169.254/user-data”>`
+- [ ] This could also happen when pictures are generated with html.
+  - https://hackerone.com/reports/816848
