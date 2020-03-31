@@ -15,12 +15,14 @@
 - [ ] Perform a password recovery and check that other concurrent sessions are invalidated.
 - [ ] Try terminating the session at the same time as performing some other functionality that is resource heavy.
   - https://hackerone.com/reports/340191
+- [ ] Check that a users current session is terminated if that user gets his/hers permissions lowered.
+  - https://hackerone.com/reports/794431
 
 # Check for Session Fixation
 
 - [ ] If the application issues session tokens to unauthenticated users, obtain a token and perform a login. If the application does not issue a fresh token following a successful login, it is vulnerable to session fi xation.
 - [ ] Even if the application does not issue session tokens to unauthenticated users, obtain a token by logging in, and then return to the login page. If the application is willing to return this page even though you are already authenticated, submit another login as a different user using the same token. If the application does not issue a fresh token after the second login, it is vulnerable to session fixation.
-- [ ] 
+
 
 
 # Test for CSRF
