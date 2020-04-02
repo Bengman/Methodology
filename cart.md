@@ -1,0 +1,1 @@
+- [ ] Check if negative quantities is allowed and can reduce price - https://hackerone.com/reports/771694
