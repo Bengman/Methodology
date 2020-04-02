@@ -18,7 +18,7 @@
   - HTML-injections (todo)
 + Function Specific Vulnerabilities
   - [File uploads](https://github.com/Bengman/Methodology/blob/master/file_upload.md)
-  - E-commerce purchase/cart flow (todo)
+  - [E-commerce purchase/cart flow](https://github.com/Bengman/Methodology/blob/master/cart.md)
   - [PDF-generation](https://github.com/Bengman/Methodology/blob/master/pdf_gen.md)
   - [Image Magic](https://github.com/Bengman/Methodology/blob/master/image_magic.md)
   - Posting comments (todo)
