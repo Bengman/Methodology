@@ -20,10 +20,13 @@ form that contains hidden fields for all the relevant parameters required
 ### JSON / XML CSRF
 - [ ] Check if the Content-Type is forced to be JSON or can it be changed to text/plain and used with parameter padding?
   - https://www.geekboy.ninja/blog/tag/json-csrf/
+- [ ] Try setting Content-Type to application/x-www-form-urlencoded.
+  - https://twitter.com/santuySec/status/1245552462099972096
 - [ ] Try using Flash to bypass CSRF-protections. 
   - https://hackerone.com/reports/44146
   - https://github.com/sp1d3r/swf_json_csrf
   - https://blog.appsecco.com/exploiting-csrf-on-json-endpoints-with-flash-and-redirects-681d4ad6b31b
+
   
  "Force content-Type to application/JSON and set SAMESITE cookie".
 
