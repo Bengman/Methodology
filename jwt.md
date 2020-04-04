@@ -4,6 +4,8 @@
 
 - [ ] Check if we can set the "alg" to none and remove the signature.
 - [ ] Check for any injection in the "kid" parameter.
+  - `"kid":"../../../../../../../../../../dev/null"`, and re-sign with an empty key value.
+  
 - [ ] Check if embedded "jwk" elements are trusted.
 - [ ] Check for whitelisting of algorithms.
 - [ ] Check for any replay protecttion by the "jti" element.
