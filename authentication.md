@@ -44,7 +44,7 @@
 - [ ] If the registration of duplicate usernames succeeds, attempt to register the same username twice with the same password, and determine the application’s behavior:
    -  a. If an error message results, you can exploit this behavior to carry out a brute-force attack, even if this is not possible on the main login page. Target an enumerated or guessed username, and attempt to register this username multiple times with a list of common passwords. When the application rejects a specific password, you have probably found the existing password for the targeted account.
    -  b. If no error message results, log in using the credentials you speci- fied, and see what happens. You may need to register several users, and modify different data held within each account, to understand whether this behavior can be used to gain unauthorized access to other users’ accounts.
-
+- [ ] Try registering with an email belonging to the company. There could be whistelists, extra features, no rate-limit etc.
 
 # Test account recovery function
 
