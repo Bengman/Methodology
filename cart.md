@@ -2,3 +2,4 @@
 
 
 - [ ] Try using a blocked credit card to perform the purchase.
+- [ ] Try using "sandboxed" card or bank details.
