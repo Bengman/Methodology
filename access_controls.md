@@ -12,3 +12,11 @@
   - https://secgeek.net/twitter-vulnerability/
 
 
+- [ ] If we see an id parameter and we are not allowed to list other id's data, try to add another ID param.
+```
+/api/v1/users/profile?id=MYID -> HTTP 200 with my data
+/api/v1/users/profile?id=ANOTHERUSERID -> HTTP 401
+/api/v1/users/profile?id=MYID&id=ANOTHERUSERID -> HTTP 200 with my data
+/api/v1/users/profile?id=[myId,victimId]
+```
+ - https://twitter.com/intigriti/status/1256183450622668802/photo/1
