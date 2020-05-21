@@ -29,7 +29,7 @@
   - [Reflected IP's](https://github.com/Bengman/Methodology/blob/master/reflected_ip.md)
 + API (todo)
   - [GraphQL](https://github.com/Bengman/Methodology/blob/master/graphql.md)
-  - REST
+  - [REST](https://github.com/Bengman/Methodology/blob/master/rest_api.md)
   - SOAP
 + [Android](https://github.com/Bengman/Methodology/blob/master/android.md)
 
