@@ -20,6 +20,7 @@
 
 - [ ] Try removing or tampering with the signature to verify that it is enforced.
 - [ ] Try to brute-force the secret key.
+- [ ] If you were able to crack a JWT secret key but there are still some unguessable parameters in the payload just like a UUID, try sending an empty payload instead.
 - [ ] Check for time constant verification for HMAC.
 - [ ] Check for any keys or secrets in the source code.
 - [ ] Check that keys and secrets are different between environments.
