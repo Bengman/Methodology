@@ -110,7 +110,26 @@ may lead to other code paths or unexpected behavior.
 ### SSL Pinning
 
 - [ ] Establish if the application is using SSL pinning.
-(todo)
+
+Bypass SSL pinning using Frida and Objection:
+
+```
+pip3 install objection
+
+objection patchapk -2 -s app.apk  #patching apk
+
+adb install app.objection.apk # installing the new apk on device
+
+frida-ps -U # check that frida finds gadgets
+# Run the application on the device, it will pause at start up
+
+objection explore # will "connect" to the debug interface of the app
+
+android sslpinning disable # disable ssl pinning.
+```
+
+
+
 
 
 # Dynamic Analysis
