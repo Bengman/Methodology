@@ -19,11 +19,14 @@ grep -Ri "secret" . --color=always | less -R
 
 ### Secrets:
 
+https://github.com/streaak/keyhacks
+
 Sensitive:
 
 - `cloudinary://434762629765715:█████@reverb"` - // Cloudinary basic auth. "Note: You should only include the cloud_name in the value, the api secret and key should be left out of the application." https://hackerone.com/reports/351555
 - `io.fabric.ApiKey` - https://hackerone.com/reports/766346
 - `[key].apps.googleusercontent.com` - https://hackerone.com/reports/766346
+- `Google maps api key` - https://github.com/streaak/keyhacks#Google-Maps-API-key
 
 Non sensitive
 
