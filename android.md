@@ -14,8 +14,9 @@ jd-gui
 - [ ] Compile a list of interesting public APIs and look for their package names in apps.
 - [ ] Either scan through the output manually file by file or run some searches within the extract folder for key works like ‘secret’, ‘password’, ‘user’, ‘token’, ‘api’, ‘key’, etc 
 ```
-grep -Ri "secret" . | more
+grep -Ri "secret" . --color=always | less -R
 ```
+
 ### Secrets:
 
 Sensitive:
