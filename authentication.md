@@ -93,6 +93,8 @@ When a user wants to reset a password
 
 
 # Test any multi-stage mechanisms
+   - https://twitter.com/bugbounty_tips/status/1299226665638191106/photo/1
+   
 - [ ] Brute force OTP
     - https://hackerone.com/reports/121696
     - https://hackerone.com/reports/202425
