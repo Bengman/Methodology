@@ -13,6 +13,7 @@
   - [Blind XSS](https://github.com/Bengman/Methodology/blob/master/blind_xss.md)
   - SQL Injection (todo)
   - Web Cache Poisoning (todo)
+  - [CSRF](https://github.com/Bengman/Methodology/blob/master/csrf.md)
   - [XXE](https://github.com/Bengman/Methodology/blob/master/xxe.md)
   - SSRF (todo)
   - HTML-injections (todo)
