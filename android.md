@@ -161,7 +161,7 @@ sudo service hostapd stop
 
 - [ ] Proxy traffic through burp and test as API/webapp
 
-### Bypass SSL pinning using Frida and Objection:
+### Bypass certificate pinning using Frida and Objection:
 
 - [ ] Install Objection `pip3 install objection`
 - [ ] Patch apk `objection patchapk -2 -s app.apk`
