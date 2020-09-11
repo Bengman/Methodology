@@ -30,6 +30,10 @@
   - SSH into your iPhone (see the iProxy section above) and run `wget <RELEASE URL FROM STEP 2>` → `dpkg -i <DOWNLOADED PACKAGE NAME>` → `killall -HUP SpringBoard` → `rm <DOWNLOADED PACKAGE NAME>`
   - On your iPhone, go to Settings → SSL Kill Switch 2 (it should be at the bottom) → Disable Certificate Validation
   
+  
+- [ ] Bypass cert pinning using Frida and Objection
+- TODO
+
 - [ ] Bypass Jailbreak Detection with Liberty Lite
   - On your iPhone, open Cydia and add module author Ryley Angus’ repository by going to Sources → Edit → Add and enter `https://ryleyangus.com/repo/`
   - Go to Search → Enter Liberty Lite → Install
@@ -58,3 +62,4 @@
 - https://spaceraccoon.dev/from-checkra1n-to-frida-ios-app-pentesting-quickstart-on-ios-13
 - https://www.allysonomalley.com/
 - https://medium.com/@yogendra_h1/ios-application-security-jailbreak-12-4-5e3fc0dc0726
+- https://zeroinformationsecurity.wordpress.com/2020/05/07/the-only-way-to-bypass-ssl-pinning-on-ios-13/
