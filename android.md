@@ -161,29 +161,14 @@ sudo service hostapd stop
 
 - [ ] Proxy traffic through burp and test as API/webapp
 
-### Disable Certificate Pinning
+### Bypass SSL pinning using Frida and Objection:
 
-- [ ] Establish if the application is using SSL pinning.
-
-Bypass SSL pinning using Frida and Objection:
-
-```
-pip3 install objection
-
-objection patchapk -2 -s app.apk  #patching apk
-
-adb install app.objection.apk # installing the new apk on device
-
-frida-ps -U # check that frida finds gadgets
-# Run the application on the device, it will pause at start up
-
-objection explore # will "connect" to the debug interface of the app
-
-android sslpinning disable # disable ssl pinning.
-```
-
-
-
-
+- [ ] Install Objection `pip3 install objection`
+- [ ] Patch apk `objection patchapk -2 -s app.apk`
+- [ ] Install the new apk on device `adb install app.objection.apk` # installing the new apk on device
+- [ ] Check that frida finds gadgets `frida-ps -U` 
+- [ ] Run the application on the device, it will pause at start up
+- [ ] Connect to the debug interface of the app `objection explore`
+- [ ] Call function to disable cert pinning `android sslpinning disable`
 
 # Dynamic Analysis
