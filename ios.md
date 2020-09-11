@@ -53,3 +53,8 @@
 
 - [ ] App Decryption and class-dump
   
+  
+### References
+- https://spaceraccoon.dev/from-checkra1n-to-frida-ios-app-pentesting-quickstart-on-ios-13
+- https://www.allysonomalley.com/
+- https://medium.com/@yogendra_h1/ios-application-security-jailbreak-12-4-5e3fc0dc0726
