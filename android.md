@@ -106,6 +106,37 @@ may lead to other code paths or unexpected behavior.
 ## Audit Broadcast recievers
 
 
+
+## Audit attacksurface with Drozer
+
+- [ ] Getting Drozer to work in latest Kali
+```
+wget https://github.com/FSecureLABS/drozer/releases/download/2.4.4/drozer-2.4.4-py2-none-any.whl
+apt-get --assume-yes install python-pip
+pip2 install wheel
+pip2 install pyyaml
+pip2 install pyhamcrest
+pip2 install protobuf 
+pip2 install pyopenssl 
+pip2 install twisted
+pip2 install service_identity
+pip2 install drozer-2.4.4-py2-none-any.whl
+```
+
+- [ ] Install agent on device `$ adb install agent.apk`
+- [ ] Forward server port to client `$ adb forward tcp:31415 tcp:31415`
+- [ ] Connect to server `$ drozer console connect`
+- [ ] Search for the application package `run app.package.list -f sieve`
+- [ ] Show information about the package `run app.package.info -a com.mwr.example.sieve`
+- [ ] Analyze app attacksurface `run app.package.attacksurface com.mwr.example.sieve`
+- [ ] Show activities `run app.activity.info -a com.mwr.example.sieve `
+- [ ] Interact with activities ` run app.activity.start --component com.mwr.example.sieve com.mwr.example.sieve.PWList`  
+- [ ] Read from content providers `run app.provider.info -a com.mwr.example.sieve`
+- [ ] Scan for URI's `run scanner.provider.finduris -a com.mwr.example.sieve`
+- [ ] Scan for injections ` run scanner.provider.injection -a com.mwr.example.sieve`
+- [ ] Interact with services `run app.service.info -a com.mwr.example.sieve`
+
+
 ## Audit Communication to backend
 
 ### Set up AP on Kali
