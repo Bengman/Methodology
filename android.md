@@ -193,10 +193,17 @@ sudo service hostapd stop
 - [ ] Proxy traffic through burp and test as API/webapp
 
 ### Bypass certificate pinning using Frida and Objection:
+- [ ] Install frida-server on device
+```
+$ adb root # might be required
+$ adb push frida-server /data/local/tmp/
+$ adb shell "chmod 755 /data/local/tmp/frida-server"
+$ adb shell "/data/local/tmp/frida-server &"
+```
 
-- [ ] Install Objection `pip3 install objection`
+- [ ] Install Objection on laptop `pip3 install objection`
 - [ ] Patch apk `objection patchapk -2 -s app.apk`
-- [ ] Install the new apk on device `adb install app.objection.apk` # installing the new apk on device
+- [ ] Install the new apk on device `adb install app.objection.apk`
 - [ ] Check that frida finds gadgets `frida-ps -U` 
 - [ ] Run the application on the device, it will pause at start up
 - [ ] Connect to the debug interface of the app `objection explore`
