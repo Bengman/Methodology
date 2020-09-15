@@ -193,14 +193,20 @@ sudo service hostapd stop
 - [ ] Proxy traffic through burp and test as API/webapp
 
 ### Bypass certificate pinning using Frida and Objection:
-- [ ] Install frida-server on device
+(if device = rooted)
+- [ ] Install Objection on laptop `pip3 install objection`
+- [ ] Install and run frida-server on device (as root)
 ```
 $ adb root # might be required
 $ adb push frida-server /data/local/tmp/
 $ adb shell "chmod 755 /data/local/tmp/frida-server"
 $ adb shell "/data/local/tmp/frida-server &"
 ```
+- [ ] Start the app and find the process with `frida-ps -U`
+- [ ] Connect with objection to the process `objection --gadget "process name" explore`
+- [ ] Call function to disable cert pinning `android sslpinning disable`
 
+(if device =! rooted):
 - [ ] Install Objection on laptop `pip3 install objection`
 - [ ] Patch apk `objection patchapk -2 -s app.apk`
 - [ ] Install the new apk on device `adb install app.objection.apk`
