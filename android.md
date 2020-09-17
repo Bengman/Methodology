@@ -105,6 +105,9 @@ may lead to other code paths or unexpected behavior.
 
 ## Audit Broadcast recievers
 
+## Audit Logging
+- [ ] Check for logging of sensitive data `adb logcat`
+
 
 
 ## Audit attacksurface with Drozer
