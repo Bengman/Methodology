@@ -50,15 +50,19 @@
   - In another terminal, run `iproxy 2222 22` if it's not already running.
   - To dump an app's file, `./dump.py <APP DISPLAY NAME OR BUNDLE IDENTIFIER>`
 
-- [ ] Extract .ipa files with ip installer
+- [ ] Extract .ipa files with ipainstaller
   - Install ipainstaller from Cydia
   - From a ssh prompt type `ipainstaller -l` to list all the apps installed on my jailbroken device and grab the bundle id of that app you wish to extract. Extract it using `ipainstaller -b <app_bundle>`.
-  
+
+## Static analysis
+
 - [ ] Install MobSF (Kali)
   - `git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git`
   - `cd Mobile-Security-Framework-MobSF`
   - `./setup.sh`
   - Drag the file into MobSF
+
+## Dynamic analysis
 
 - [ ] App Decryption and class-dump
   
