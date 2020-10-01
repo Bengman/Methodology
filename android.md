@@ -91,7 +91,7 @@ apktool d app.apk; cd app;mkdir collection; find . -name \*.smali -exec sh -c 'c
 ## Audit Content Providers
 - [ ] 
 
-## Audit Activitis
+## Audit Activities
 
 - [ ] Check for exported sensitive activities without permissions (auth bypass).
 - [ ] In addition to simply starting each exposed activity, you should
