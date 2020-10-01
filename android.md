@@ -105,6 +105,17 @@ may lead to other code paths or unexpected behavior.
 
 ## Audit Broadcast recievers
 
+## Audit Deep links
+- [ ] Decompile an app with jadx
+- [ ] Collect all deeplink handlers from AndroidManifest.xml, they look like `<data android:scheme="airbnb" android:host="d"/>`
+- [ ] Grep among all sources and resources a pattern from a handler, in this case, `airbnb://d`
+- [ ] You could find a lot of hardcoded urls like `airbnb://d/openurl?url=http://airbnb.com/blabla`. That's much simpler than learning app's sources
+- [ ] Now try to put your own domains with adb `adb shell am start -a android.intent.action.VIEW -d airbnb://d/openurl?url=http://evil.com`, or on HTML pages (check out the H1 report below).
+- [ ] Repeat the same thing for iOS apps. Usually, functionality is similar, but actual implementations are different
+    - That's how I found https://hackerone.com/reports/401793 and earned $7.5k
+    - https://twitter.com/_bagipro/status/1294972446135791616
+ 
+ 
 ## Audit Logging
 - [ ] Check for logging of sensitive data `adb logcat`
 
