@@ -1,9 +1,9 @@
-# IOS Methodology
+# iOS Methodology
 
-- [ ] Jailbreak using Unc0ver
+## Jailbreak using Unc0ver
 
 
-- [ ] Jailbreak using Checkra1n
+## Jailbreak using Checkra1n
   
   
  - [ ] Install iProxy for SSH over usb-cable
