@@ -100,6 +100,15 @@ may lead to other code paths or unexpected behavior.
 - [ ] Check if activites leak sensitive data through "Recent Application Screenshots".
 - [ ] Check all exported activities that extend `PreferenceActivity` for the class named `isValidFragment()` to allow developers to override fragment injection protections and validate which fragments can be loaded inside the activity. Performing poor validation on the fragment name supplied to this method or simply returning true in this method without performing any checks would still result in fragment injection attacks being possible.
 
+### Browser activities
+Looking for an easy way to open arbitrary URLs in Android apps?
+- [ ] Open AndroidManifest.xml
+- [ ] Find all browser activities (must contain `<category android:name="android.intent.category.BROWSABLE"/>`)
+- [ ] Run `adb shell am start -n app_package_name/component_name -a android.intent.action.VIEW -d http://google.com` for each of the activities (or any of your domains). Also track in Burp any requests to http://google.com or your domain.
+- [ ] If a domain is opened, it means you found a vulnerability! Now inspect the request if it contains any auth tokens (if yes, it means you've got an account takeover!). No? Try different techniques to obtain any PII.
+  - https://twitter.com/mem3hack/status/1294701158565634048
+
+
 ## Audit Services
 - [ ] 
 
