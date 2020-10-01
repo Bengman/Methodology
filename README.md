@@ -33,6 +33,14 @@
   - [REST](https://github.com/Bengman/Methodology/blob/master/rest_api.md)
   - SOAP
 + [Android](https://github.com/Bengman/Methodology/blob/master/android.md)
+  - [Static analysis](https://github.com/Bengman/Methodology/blob/master/android.md#static-analysis)
+  - [Audit content providers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-content-providers)
+  - [Audit activities](https://github.com/Bengman/Methodology/blob/master/android.md#audit-activitis)
+  - [Audit services](https://github.com/Bengman/Methodology/blob/master/android.md#audit-services)
+  - [Audit logging](https://github.com/Bengman/Methodology/blob/master/android.md#audit-logging)
+  - [Audit attack app local surface](https://github.com/Bengman/Methodology/blob/master/android.md#audit-attacksurface-with-drozer)
+  - [Audit API](https://github.com/Bengman/Methodology/blob/master/android.md#audit-communication-to-backend)
+  - [ Dynamic analysis](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis)
 + [IOS](https://github.com/Bengman/Methodology/blob/master/ios.md)
 
 
