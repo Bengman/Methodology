@@ -1,11 +1,15 @@
 # iOS Methodology
 
-## Jailbreak using Unc0ver
-
-
-## Jailbreak using Checkra1n
  
 ## Setting up device
+
+### Jailbreak using Unc0ver
+
+
+### Jailbreak using Checkra1n
+
+
+### Setting up tools
   
  - [ ] Install iProxy for SSH over usb-cable
   - Back on your connected macOS devices, run: `brew install libusbmuxd (apt-get install libusbmuxd* for Linux)`
