@@ -33,6 +33,7 @@
   - [REST](https://github.com/Bengman/Methodology/blob/master/rest_api.md)
   - SOAP
 + [Android](https://github.com/Bengman/Methodology/blob/master/android.md)
+  - [Rooting device](https://github.com/Bengman/Methodology/blob/master/android.md#rooting-nexus-72013-flo-android-601-from-kali)
   - [Static analysis](https://github.com/Bengman/Methodology/blob/master/android.md#static-analysis)
   - [Audit content providers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-content-providers)
   - [Audit activities](https://github.com/Bengman/Methodology/blob/master/android.md#audit-activitis)
