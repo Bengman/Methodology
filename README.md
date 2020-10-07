@@ -43,6 +43,6 @@
   - [Bypass cert pinning](https://github.com/Bengman/Methodology/blob/master/android.md#bypass-certificate-pinning-using-frida-and-objection)
   - [Audit API](https://github.com/Bengman/Methodology/blob/master/android.md#audit-communication-to-backend)
   - [Dynamic analysis](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis)
-+ [IOS](https://github.com/Bengman/Methodology/blob/master/ios.md)
++ [iOS](https://github.com/Bengman/Methodology/blob/master/ios.md)
 
 
