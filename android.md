@@ -3,11 +3,11 @@
 - [ ] Install adb and fastboot `sudo apt install adb fastboot`
 - [ ] Enable USB debugging. Go to Settings->About Tablet->Build Number. Tap on build number 7 times. This will enable the developer mode on your tab. You can see Developer Options in the Setting menu. Go in it and enable the USB Debugging option.
 
-### Unlocking bootloader
+#### Unlocking bootloader
 - [ ] Reboot your device in bootloader menu `adb reboot bootloader`
 - [ ] Unlock the bootloader `sudo fastboot oem unlock`. Choose yes when the question to unlock appears.
 
-### Rooting using TWRP
+#### Rooting using TWRP recovery image and CF Auto Root
 - [ ] Download latest TWRP for device `https://eu.dl.twrp.me/flo/twrp-3.4.0-0-flo.img`
 - [ ] Verify download hashsum `sha256sum twrp-3.4.0-0-flo.img`
 - [ ] Download CF auto root for the specific device from firmware.mobi
