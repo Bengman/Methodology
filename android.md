@@ -1,3 +1,24 @@
+## Rooting Nexus 7(2013, flo) Android 6.0.1 from kali
+
+- [ ] Install adb and fastboot `sudo apt install adb fastboot`
+- [ ] Enable USB debugging. Go to Settings->About Tablet->Build Number. Tap on build number 7 times. This will enable the developer mode on your tab. You can see Developer Options in the Setting menu. Go in it and enable the USB Debugging option.
+
+### Unlocking bootloader
+- [ ] Reboot your device in bootloader menu `adb reboot bootloader`
+- [ ] Unlock the bootloader `sudo fastboot oem unlock`. Choose yes when the question to unlock appears.
+
+### Rooting using TWRP
+- [ ] Download latest TWRP for device `https://eu.dl.twrp.me/flo/twrp-3.4.0-0-flo.img`
+- [ ] Verify download hashsum `sha256sum twrp-3.4.0-0-flo.img`
+- [ ] Download CF auto root for the specific device from firmware.mobi
+- [ ] Verify download hashsum `sha1sum cfar_asus_nexus-7_razor_mob30x_i4hdt1.zip`
+- [ ] Reboot your device in bootloader menu `adb reboot bootloader`
+- [ ] Flash device with TWRP image `sudo fastboot flash recovery ~/Path-to-TWRP.img`
+- [ ] Confirm by going to recovery mode by choosing it in the menu on the phone. You should now see the TWRP recovery mode menu.
+- [ ] Install the root (CF Auto Root) while in fastboot mode `sudo fastboot boot ~/Path-To-The-Image/boot.img`
+
+
+
 ## Static Analysis
 
 - [ ] Unpack the apk file.
