@@ -147,7 +147,8 @@ Looking for an easy way to open arbitrary URLs in Android apps?
  
  
 ## Audit Logging
-- [ ] Check for logging of sensitive data `adb logcat`
+- [ ] Check for logging of sensitive data `adb logcat | tee logcat.txt`
+- [ ] `grep "password" logcat.txt`
 
 
 
