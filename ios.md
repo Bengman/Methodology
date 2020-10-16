@@ -7,7 +7,13 @@
 
 
 ### Jailbreak using Checkra1n
-
+- [ ] Add Checkra1n repo `echo "deb https://assets.checkra.in/debian /" | sudo tee -a /etc/apt/sources.list`
+- [ ] Add public key: `sudo apt-key adv --fetch-keys https://assets.checkra.in/debian/archive.key`
+- [ ] Install the checkra1n package: `sudo apt update && apt install checkra1n`
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
 
 ### Setting up tools
   
