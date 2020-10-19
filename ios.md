@@ -13,7 +13,6 @@
 - [ ] Start checkra1n as root `sudo checkra1n`
 - [ ] Check that checkrain identifies the device and press "start"
 - [ ] Follow the steps described by checkra1n.
-- [ ] 
 
 ### Setting up tools
   
