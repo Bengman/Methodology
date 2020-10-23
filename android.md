@@ -88,7 +88,7 @@ network protocols.
   - Check manifest for the permission `android.premission.WRITE_EXTERNAL_STORAGE`.
   - Grep within the code to see if the permission is used `getExternal`.
 - [ ] Check for executable file on external storage such as apk, binary files etc.
-- [ ] Check if the app is installing stuff from external storage. (binary code to sd card + installing package)
+- [ ] Check if the app is installing stuff from external storage, (binary code to sd card + installing package). For example look for `application/vnd.android.package-archive`. This is a string indicator that something is installed in the app.
   - https://www.youtube.com/watch?v=OLgmPxTHLuY
 - [ ] Look for files stored in internal storage whose access attributes are changed to make them world-accessible.
 - [ ] Look for unsanitized file or path names that are supplied by potential attackers.
@@ -235,6 +235,7 @@ sudo service dnsmasq stop
 sudo service hostapd stop
 ```
 
+- [ ] Kill any conflicting processes that will make the life of hostapd miserable, such as wpa_supplicant or Network manager. `sudo airmon-ng check kill`
 - [ ] Proxy traffic through burp and test as API/webapp
 
 ### Bypass certificate pinning using Frida and Objection:
