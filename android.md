@@ -5,12 +5,12 @@
   - [Installing tools](https://github.com/Bengman/Methodology/blob/master/android.md#installing-tools) 
     - [Drozer](https://github.com/Bengman/Methodology/blob/master/android.md#drozer) 
     - [Frida & Objection](https://github.com/Bengman/Methodology/blob/master/android.md#frida--objection)  
-    - [Set up Wireless Access Point on Kali](https://github.com/Bengman/Methodology/blob/master/android.md#set-up-wireless-access-point-on-kali) 
+    - [Set up wireless access point on Kali](https://github.com/Bengman/Methodology/blob/master/android.md#set-up-wireless-access-point-on-kali) 
     - [Installing Burp certificate](https://github.com/Bengman/Methodology/blob/master/android.md#installing-burp-certificate) 
     - [Bypass certificate pinning using Frida and Objection](https://github.com/Bengman/Methodology/blob/master/android.md#bypass-certificate-pinning-using-frida-and-objection)
 + [Static analysis](https://github.com/Bengman/Methodology/blob/master/android.md#static-analysis)
   - [Cryptography and authentication](https://github.com/Bengman/Methodology/blob/master/android.md#cryptography-and-authentication)
-  - [Leaked Secrets](https://github.com/Bengman/Methodology/blob/master/android.md#leaked_secrets)
+  - [Leaked secrets](https://github.com/Bengman/Methodology/blob/master/android.md#leaked_secrets)
   - [Insecure connections](https://github.com/Bengman/Methodology/blob/master/android.md#insecure-connections)
   - [Insecure storage](https://github.com/Bengman/Methodology/blob/master/android.md#insecure-storage)
   - [Find interesting endpoints](https://github.com/Bengman/Methodology/blob/master/android.md#find-endpoints )
@@ -18,9 +18,10 @@
   - [Audit content providers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-content-providers)
   - [Audit activities](https://github.com/Bengman/Methodology/blob/master/android.md#audit-activitis)
   - [Audit services](https://github.com/Bengman/Methodology/blob/master/android.md#audit-services)
-  - [Audit Broadcast recievers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-broadcast-recievers)
-  - [Audit Deep links](https://github.com/Bengman/Methodology/blob/master/android.md#audit-deep-links)
+  - [Audit broadcast recievers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-broadcast-recievers)
+  - [Audit deep links](https://github.com/Bengman/Methodology/blob/master/android.md#audit-deep-links)
   - [Audit logging](https://github.com/Bengman/Methodology/blob/master/android.md#audit-logging)
+  - [Audit execution flow with Frida](https://github.com/Bengman/Methodology/blob/master/android.md#audit_execution_flow_with_frida)
 
 
 
@@ -292,3 +293,6 @@ Looking for an easy way to open arbitrary URLs in Android apps?
 ## Audit Logging
 - [ ] Check for logging of sensitive data `adb logcat | tee logcat.txt`
 - [ ] `grep "password" logcat.txt`
+
+## Audit execution flow with frida
+- [ ] TODO
