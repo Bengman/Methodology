@@ -1,3 +1,22 @@
+# Content
+
++ [Setting up device](https://github.com/Bengman/Methodology/blob/master/android.md)
++   
+  - [Rooting device](https://github.com/Bengman/Methodology/blob/master/android.md#rooting-nexus-72013-flo-android-601-from-kali)
+  - [Static analysis](https://github.com/Bengman/Methodology/blob/master/android.md#static-analysis)
+  - [Audit content providers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-content-providers)
+  - [Audit activities](https://github.com/Bengman/Methodology/blob/master/android.md#audit-activitis)
+  - [Audit services](https://github.com/Bengman/Methodology/blob/master/android.md#audit-services)
+  - [Audit logging](https://github.com/Bengman/Methodology/blob/master/android.md#audit-logging)
+  - [Audit app local attack surface](https://github.com/Bengman/Methodology/blob/master/android.md#audit-attacksurface-with-drozer)
+  - [Bypass cert pinning](https://github.com/Bengman/Methodology/blob/master/android.md#bypass-certificate-pinning-using-frida-and-objection)
+  - [Audit API](https://github.com/Bengman/Methodology/blob/master/android.md#audit-communication-to-backend)
+  - [Dynamic analysis](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis)
+
+
+
+# Setting up device
+
 ## Rooting Nexus 7(2013, flo) Android 6.0.1 from kali
 
 - [ ] Install adb and fastboot `sudo apt install adb fastboot`
@@ -17,9 +36,114 @@
 - [ ] Confirm by going to recovery mode by choosing it in the menu on the phone. You should now see the TWRP recovery mode menu.
 - [ ] Install the root (CF Auto Root) while in fastboot mode `sudo fastboot boot ~/Path-To-The-Image/boot.img`
 
+## Installing tools
+
+### Drozer
+- [ ] Getting Drozer to work in latest Kali
+```
+wget https://github.com/FSecureLABS/drozer/releases/download/2.4.4/drozer-2.4.4-py2-none-any.whl
+apt-get --assume-yes install python-pip
+pip2 install wheel
+pip2 install pyyaml
+pip2 install pyhamcrest
+pip2 install protobuf 
+pip2 install pyopenssl 
+pip2 install twisted
+pip2 install service_identity
+pip2 install drozer-2.4.4-py2-none-any.whl
+```
+
+- [ ] Install agent on device `$ adb install agent.apk`
+- [ ] Forward server port to client `$ adb forward tcp:31415 tcp:31415`
+- [ ] Connect to server `$ drozer console connect`
+
+### Frida & Objection
+- [ ] Install Objection on laptop `pip3 install objection`
+- [ ] Install and run frida-server on device (as root)
+```
+$ adb root # might be required
+$ adb push frida-server /data/local/tmp/
+$ adb shell "chmod 755 /data/local/tmp/frida-server"
+$ adb shell "/data/local/tmp/frida-server &"
+```
+
+### Set up Wireless Access Point on Kali
+- [ ] `apt-get install hostapd dnsmasq`
+- [ ] Create `/etc/dnsmasq.conf`
+```
+# Bind to only one interface
+bind-interfaces
+# Choose interface for binding
+interface=wlan0
+# Specify range of IP addresses for DHCP leasses
+dhcp-range=192.168.150.2,192.168.150.10
+```
+- [ ] Create `/etc/hostapd.conf`
+```
+# Define interface
+interface=wlan0
+# Select driver
+driver=nl80211
+# Set access point name
+ssid=myhotspot
+# Set access point harware mode to 802.11g
+hw_mode=g
+# Set WIFI channel (can be easily changed)
+channel=6
+# Enable WPA2 only (1 for WPA, 2 for WPA2, 3 for WPA + WPA2)
+wpa=2
+wpa_passphrase=mypassword
+```
+- [ ] Create `hotspot.sh`
+```
+#!/bin/bash
+# Start
+# Configure IP address for WLAN
+sudo ifconfig wlan0 192.168.150.1
+# Start DHCP/DNS server
+sudo service dnsmasq restart
+# Enable routing
+sudo sysctl net.ipv4.ip_forward=1
+# Enable NAT
+sudo iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE
+# Run access point daemon
+sudo hostapd /etc/hostapd.conf
+# Stop
+# Disable NAT
+sudo iptables -D POSTROUTING -t nat -o ppp0 -j MASQUERADE
+# Disable routing
+sudo sysctl net.ipv4.ip_forward=0
+# Disable DHCP/DNS server
+sudo service dnsmasq stop
+sudo service hostapd stop
+```
+
+- [ ] Kill any conflicting processes that will make the life of hostapd miserable, such as wpa_supplicant or Network manager. `sudo airmon-ng check kill`
+- [ ] Proxy traffic through burp and test as API/webapp
+
+### Installing Burp certificate
+- [ ] Configure proxy on the wireless network connection.
+- [ ] Visit `http://burp` on device and download certificate
+- [ ] Rename `cacert.der` to `cacert.cer` and then install it on the device.
+
+### Bypass certificate pinning using Frida and Objection:
+(if device = rooted)
+
+- [ ] Start the app and find the process with `frida-ps -U`
+- [ ] Connect with objection to the process `objection --gadget "process name" explore`
+- [ ] Call function to disable cert pinning `android sslpinning disable`
+
+(if device =! rooted):
+- [ ] Install Objection on laptop `pip3 install objection`
+- [ ] Patch apk `objection patchapk -2 -s app.apk`
+- [ ] Install the new apk on device `adb install app.objection.apk`
+- [ ] Check that frida finds gadgets `frida-ps -U` 
+- [ ] Run the application on the device, it will pause at start up
+- [ ] Connect to the debug interface of the app `objection explore`
+- [ ] Call function to disable cert pinning `android sslpinning disable`
 
 
-## Static Analysis
+# Static Analysis
 
 - [ ] Unpack the apk file.
 ```
@@ -41,7 +165,7 @@ grep -Ri "secret" . --color=always | less -R
 ### Secrets:
 
 https://github.com/streaak/keyhacks
-
+  
 Sensitive:
 
 - `cloudinary://434762629765715:█████@reverb"` - // Cloudinary basic auth. "Note: You should only include the cloud_name in the value, the api secret and key should be left out of the application." https://hackerone.com/reports/351555
@@ -109,12 +233,19 @@ apktool d app.apk; cd app;mkdir collection; find . -name \*.smali -exec sh -c 'c
 ### Automated analysis
 - [ ] Run the .apk in MobSF
 
+
+# Dynamic Analysis
+
 ## Audit Content Providers
-- [ ] 
+- [ ] Read from content providers `run app.provider.info -a com.mwr.example.sieve`
+- [ ] Scan for URI's `run scanner.provider.finduris -a com.mwr.example.sieve`
+- [ ] Scan for injections ` run scanner.provider.injection -a com.mwr.example.sieve`
 
 ## Audit Activities
 
 - [ ] Check for exported sensitive activities without permissions (auth bypass).
+  - Show activities `run app.activity.info -a com.mwr.example.sieve `
+  - Interact with activities ` run app.activity.start --component com.mwr.example.sieve com.mwr.example.sieve.PWList`  
 - [ ] In addition to simply starting each exposed activity, you should
 review the onCreate() method of each in search of conditional statements that
 may lead to other code paths or unexpected behavior.
@@ -131,9 +262,10 @@ Looking for an easy way to open arbitrary URLs in Android apps?
 
 
 ## Audit Services
-- [ ] 
+- [ ] Interact with services `run app.service.info -a com.mwr.example.sieve`
 
 ## Audit Broadcast recievers
+- [ ] TODO
 
 ## Audit Deep links
 - [ ] Decompile an app with jadx
@@ -149,116 +281,3 @@ Looking for an easy way to open arbitrary URLs in Android apps?
 ## Audit Logging
 - [ ] Check for logging of sensitive data `adb logcat | tee logcat.txt`
 - [ ] `grep "password" logcat.txt`
-
-
-
-## Audit attacksurface with Drozer
-
-- [ ] Getting Drozer to work in latest Kali
-```
-wget https://github.com/FSecureLABS/drozer/releases/download/2.4.4/drozer-2.4.4-py2-none-any.whl
-apt-get --assume-yes install python-pip
-pip2 install wheel
-pip2 install pyyaml
-pip2 install pyhamcrest
-pip2 install protobuf 
-pip2 install pyopenssl 
-pip2 install twisted
-pip2 install service_identity
-pip2 install drozer-2.4.4-py2-none-any.whl
-```
-
-- [ ] Install agent on device `$ adb install agent.apk`
-- [ ] Forward server port to client `$ adb forward tcp:31415 tcp:31415`
-- [ ] Connect to server `$ drozer console connect`
-- [ ] Search for the application package `run app.package.list -f sieve`
-- [ ] Show information about the package `run app.package.info -a com.mwr.example.sieve`
-- [ ] Analyze app attacksurface `run app.package.attacksurface com.mwr.example.sieve`
-- [ ] Show activities `run app.activity.info -a com.mwr.example.sieve `
-- [ ] Interact with activities ` run app.activity.start --component com.mwr.example.sieve com.mwr.example.sieve.PWList`  
-- [ ] Read from content providers `run app.provider.info -a com.mwr.example.sieve`
-- [ ] Scan for URI's `run scanner.provider.finduris -a com.mwr.example.sieve`
-- [ ] Scan for injections ` run scanner.provider.injection -a com.mwr.example.sieve`
-- [ ] Interact with services `run app.service.info -a com.mwr.example.sieve`
-
-
-## Audit Communication to backend
-
-### Set up AP on Kali
-- [ ] `apt-get install hostapd dnsmasq`
-- [ ] Create `/etc/dnsmasq.conf`
-```
-# Bind to only one interface
-bind-interfaces
-# Choose interface for binding
-interface=wlan0
-# Specify range of IP addresses for DHCP leasses
-dhcp-range=192.168.150.2,192.168.150.10
-```
-- [ ] Create `/etc/hostapd.conf`
-```
-# Define interface
-interface=wlan0
-# Select driver
-driver=nl80211
-# Set access point name
-ssid=myhotspot
-# Set access point harware mode to 802.11g
-hw_mode=g
-# Set WIFI channel (can be easily changed)
-channel=6
-# Enable WPA2 only (1 for WPA, 2 for WPA2, 3 for WPA + WPA2)
-wpa=2
-wpa_passphrase=mypassword
-```
-- [ ] Create `hotspot.sh`
-```
-#!/bin/bash
-# Start
-# Configure IP address for WLAN
-sudo ifconfig wlan0 192.168.150.1
-# Start DHCP/DNS server
-sudo service dnsmasq restart
-# Enable routing
-sudo sysctl net.ipv4.ip_forward=1
-# Enable NAT
-sudo iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE
-# Run access point daemon
-sudo hostapd /etc/hostapd.conf
-# Stop
-# Disable NAT
-sudo iptables -D POSTROUTING -t nat -o ppp0 -j MASQUERADE
-# Disable routing
-sudo sysctl net.ipv4.ip_forward=0
-# Disable DHCP/DNS server
-sudo service dnsmasq stop
-sudo service hostapd stop
-```
-
-- [ ] Kill any conflicting processes that will make the life of hostapd miserable, such as wpa_supplicant or Network manager. `sudo airmon-ng check kill`
-- [ ] Proxy traffic through burp and test as API/webapp
-
-### Bypass certificate pinning using Frida and Objection:
-(if device = rooted)
-- [ ] Install Objection on laptop `pip3 install objection`
-- [ ] Install and run frida-server on device (as root)
-```
-$ adb root # might be required
-$ adb push frida-server /data/local/tmp/
-$ adb shell "chmod 755 /data/local/tmp/frida-server"
-$ adb shell "/data/local/tmp/frida-server &"
-```
-- [ ] Start the app and find the process with `frida-ps -U`
-- [ ] Connect with objection to the process `objection --gadget "process name" explore`
-- [ ] Call function to disable cert pinning `android sslpinning disable`
-
-(if device =! rooted):
-- [ ] Install Objection on laptop `pip3 install objection`
-- [ ] Patch apk `objection patchapk -2 -s app.apk`
-- [ ] Install the new apk on device `adb install app.objection.apk`
-- [ ] Check that frida finds gadgets `frida-ps -U` 
-- [ ] Run the application on the device, it will pause at start up
-- [ ] Connect to the debug interface of the app `objection explore`
-- [ ] Call function to disable cert pinning `android sslpinning disable`
-
-# Dynamic Analysis
