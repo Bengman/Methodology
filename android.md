@@ -1,17 +1,26 @@
 # Content
 
-+ [Setting up device](https://github.com/Bengman/Methodology/blob/master/android.md)
-+   
++ [Setting up device](https://github.com/Bengman/Methodology/blob/master/android.md#setting-up-device)
   - [Rooting device](https://github.com/Bengman/Methodology/blob/master/android.md#rooting-nexus-72013-flo-android-601-from-kali)
-  - [Static analysis](https://github.com/Bengman/Methodology/blob/master/android.md#static-analysis)
+  - [Installing tools](https://github.com/Bengman/Methodology/blob/master/android.md#installing-tools) 
+    - [Drozer](https://github.com/Bengman/Methodology/blob/master/android.md#drozer) 
+    - [Frida & Objection](https://github.com/Bengman/Methodology/blob/master/android.md#frida--objection)  
+    - [Set up Wireless Access Point on Kali](https://github.com/Bengman/Methodology/blob/master/android.md#set-up-wireless-access-point-on-kali) 
+    - [Installing Burp certificate](https://github.com/Bengman/Methodology/blob/master/android.md#installing-burp-certificate) 
+    - [Bypass certificate pinning using Frida and Objection](https://github.com/Bengman/Methodology/blob/master/android.md#bypass-certificate-pinning-using-frida-and-objection)
++ [Static analysis](https://github.com/Bengman/Methodology/blob/master/android.md#static-analysis)
+  - [Cryptography and authentication](https://github.com/Bengman/Methodology/blob/master/android.md#cryptography-and-authentication)
+  - [Leaked Secrets](https://github.com/Bengman/Methodology/blob/master/android.md#leaked_secrets)
+  - [Insecure connections](https://github.com/Bengman/Methodology/blob/master/android.md#insecure-connections)
+  - [Insecure storage](https://github.com/Bengman/Methodology/blob/master/android.md#insecure-storage)
+  - [Find interesting endpoints](https://github.com/Bengman/Methodology/blob/master/android.md#find-endpoints )
++ [Dynamic analysis](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis)
   - [Audit content providers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-content-providers)
   - [Audit activities](https://github.com/Bengman/Methodology/blob/master/android.md#audit-activitis)
   - [Audit services](https://github.com/Bengman/Methodology/blob/master/android.md#audit-services)
+  - [Audit Broadcast recievers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-broadcast-recievers)
+  - [Audit Deep links](https://github.com/Bengman/Methodology/blob/master/android.md#audit-deep-links)
   - [Audit logging](https://github.com/Bengman/Methodology/blob/master/android.md#audit-logging)
-  - [Audit app local attack surface](https://github.com/Bengman/Methodology/blob/master/android.md#audit-attacksurface-with-drozer)
-  - [Bypass cert pinning](https://github.com/Bengman/Methodology/blob/master/android.md#bypass-certificate-pinning-using-frida-and-objection)
-  - [Audit API](https://github.com/Bengman/Methodology/blob/master/android.md#audit-communication-to-backend)
-  - [Dynamic analysis](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis)
 
 
 
@@ -142,6 +151,8 @@ sudo service hostapd stop
 - [ ] Connect to the debug interface of the app `objection explore`
 - [ ] Call function to disable cert pinning `android sslpinning disable`
 
+### Bypass certificate pinning using SSL Kill Switch 2
+- [ ] TODO 
 
 # Static Analysis
 
@@ -162,7 +173,7 @@ jd-gui
 grep -Ri "secret" . --color=always | less -R
 ```
 
-### Secrets:
+### Leaked Secrets:
 
 https://github.com/streaak/keyhacks
   
