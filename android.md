@@ -115,12 +115,12 @@ sudo service dnsmasq restart
 # Enable routing
 sudo sysctl net.ipv4.ip_forward=1
 # Enable NAT
-sudo iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 # Run access point daemon
 sudo hostapd /etc/hostapd.conf
 # Stop
 # Disable NAT
-sudo iptables -D POSTROUTING -t nat -o ppp0 -j MASQUERADE
+sudo iptables -D POSTROUTING -t nat -o eth0 -j MASQUERADE
 # Disable routing
 sudo sysctl net.ipv4.ip_forward=0
 # Disable DHCP/DNS server
