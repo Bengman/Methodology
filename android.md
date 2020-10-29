@@ -249,14 +249,16 @@ apktool d app.apk; cd app;mkdir collection; find . -name \*.smali -exec sh -c 'c
 # Dynamic Analysis
 
 ## Audit Content Providers
-- [ ] Read from content providers `run app.provider.info -a com.mwr.example.sieve`
+(from Drozer)
+- [ ] Look for exported content providers `run app.provider.info -a com.mwr.example.sieve`
 - [ ] Scan for URI's `run scanner.provider.finduris -a com.mwr.example.sieve`
-- [ ] Scan for injections ` run scanner.provider.injection -a com.mwr.example.sieve`
+- [ ] Retrieve information from accessible content URIs `run app.provider.query content://com.mwr.example.sieve.DBContentProvider/Passwords/ --vertical`
+- [ ] Scan for injections `run scanner.provider.injection -a com.mwr.example.sieve`
 
 ## Audit Activities
-
+(from Drozer)
 - [ ] Check for exported sensitive activities without permissions (auth bypass).
-  - Show activities `run app.activity.info -a com.mwr.example.sieve `
+  - Show activities `run app.activity.info -a com.mwr.example.sieve`
   - Interact with activities ` run app.activity.start --component com.mwr.example.sieve com.mwr.example.sieve.PWList`  
 - [ ] In addition to simply starting each exposed activity, you should
 review the onCreate() method of each in search of conditional statements that
@@ -274,6 +276,7 @@ Looking for an easy way to open arbitrary URLs in Android apps?
 
 
 ## Audit Services
+(from Drozer)
 - [ ] Interact with services `run app.service.info -a com.mwr.example.sieve`
 
 ## Audit Broadcast recievers
