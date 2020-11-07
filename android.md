@@ -46,6 +46,9 @@
 - [ ] Confirm by going to recovery mode by choosing it in the menu on the phone. You should now see the TWRP recovery mode menu.
 - [ ] Install the root (CF Auto Root) while in fastboot mode `sudo fastboot boot ~/Path-To-The-Image/boot.img`
 
+## Creating a virtual Android device with Android Studio
+- [ ] TODO
+
 ## Installing tools
 
 ### Drozer
@@ -137,6 +140,21 @@ sudo service hostapd stop
 - [ ] Visit `http://burp` on device and download certificate
 - [ ] Rename `cacert.der` to `cacert.cer` and then install it on the device.
 
+## Bypass certificate pinning
+
+There are currently four techniques you can use to bypass SSL certificate checks on Android:
+
+- Adding a custom CA to the trusted certificate store
+- Overwriting a packaged CA cert with a custom CA cert
+- Using Frida to hook and bypass SSL certificate checks
+- Reversing custom certificate code
+
+### Adding a Custom CA to the User Certificate Store
+- [ ] TODO 
+
+### Overwrite Packaged CA Certificate with Custom CA Certificate
+- [ ] TODO 
+
 ### Bypass certificate pinning using Frida and Objection:
 (if device = rooted)
 
@@ -153,11 +171,12 @@ sudo service hostapd stop
 - [ ] Connect to the debug interface of the app `objection explore`
 - [ ] Call function to disable cert pinning `android sslpinning disable`
 
-### Bypass certificate pinning using SSL Kill Switch 2
+### Reversing custom certificate code
 - [ ] TODO 
 
+
 # Static Analysis
-- [ ] Install requered tools. `sudo apt install dex2jar jadx jd-gui apktool`
+- [ ] Install required tools. `sudo apt install dex2jar jadx jd-gui apktool`
 - [ ] Unpack the apk file using aptool. `apktool d <apk file>` 
 - [ ] Alternatively unpack the apk-file with zip and dex2jar
 ```
@@ -236,28 +255,26 @@ network protocols.
 - [ ] Understand whether user-provided ZIP files are being unzipped by the code.
 
 
-### Find endpoints
+### Find API endpoints
 - [ ] Search source code for more API / Web endpoints. `grep -hnrE "\.json" /Users/Gerben/smali/`.
 - [ ] Run linkfinder.py on unpacked app to find even more endpoints
 ```
 apktool d app.apk; cd app;mkdir collection; find . -name \*.smali -exec sh -c 'cp "$1" collection/$(head /dev/urandom | md5 | cut -d" " -f1).smali' _ {} \;; linkfinder.py -i 'collection/*.smali' -o cli
 ```
 
-### Automated analysis
+### Automated static analysis with MobSF
 - [ ] Run the .apk in MobSF
 
 
-# Dynamic Analysis
+# Dynamic Analysis with Drozer & adb
 
 ## Audit Content Providers
-(from Drozer)
 - [ ] Look for exported content providers `run app.provider.info -a com.mwr.example.sieve`
 - [ ] Scan for URI's `run scanner.provider.finduris -a com.mwr.example.sieve`
 - [ ] Retrieve information from accessible content URIs `run app.provider.query content://com.mwr.example.sieve.DBContentProvider/Passwords/ --vertical`
 - [ ] Scan for injections `run scanner.provider.injection -a com.mwr.example.sieve`
 
 ## Audit Activities
-(from Drozer)
 - [ ] Check for exported sensitive activities without permissions (auth bypass).
   - Show activities `run app.activity.info -a com.mwr.example.sieve`
   - Interact with activities ` run app.activity.start --component com.mwr.example.sieve com.mwr.example.sieve.PWList`  
@@ -277,7 +294,6 @@ Looking for an easy way to open arbitrary URLs in Android apps?
 
 
 ## Audit Services
-(from Drozer)
 - [ ] List available services `run app.service.info -a com.mwr.example.sieve`
 - [ ] Interact with services (todo)
 
@@ -299,5 +315,5 @@ Looking for an easy way to open arbitrary URLs in Android apps?
 - [ ] Check for logging of sensitive data `adb logcat | tee logcat.txt`
 - [ ] `grep "password" logcat.txt`
 
-## Audit execution flow with frida
+# Dynamic analysis with frida
 - [ ] TODO
