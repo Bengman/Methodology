@@ -2,19 +2,20 @@
 
 + [Setting up device](https://github.com/Bengman/Methodology/blob/master/android.md#setting-up-device)
   - [Rooting device](https://github.com/Bengman/Methodology/blob/master/android.md#rooting-nexus-72013-flo-android-601-from-kali)
+  - [Creating a virtual Android device with Android Studio](https://github.com/Bengman/Methodology/blob/master/android.md#creating-a-virtual-android-device-with-android-studio)
   - [Installing tools](https://github.com/Bengman/Methodology/blob/master/android.md#installing-tools) 
     - [Drozer](https://github.com/Bengman/Methodology/blob/master/android.md#drozer) 
     - [Frida & Objection](https://github.com/Bengman/Methodology/blob/master/android.md#frida--objection)  
     - [Set up wireless access point on Kali](https://github.com/Bengman/Methodology/blob/master/android.md#set-up-wireless-access-point-on-kali) 
     - [Installing Burp certificate](https://github.com/Bengman/Methodology/blob/master/android.md#installing-burp-certificate) 
-    - [Bypass certificate pinning using Frida and Objection](https://github.com/Bengman/Methodology/blob/master/android.md#bypass-certificate-pinning-using-frida-and-objection)
+    - [Bypass certificate pinning](https://github.com/Bengman/Methodology/blob/master/android.md#bypass-certificate-pinning)
 + [Static analysis](https://github.com/Bengman/Methodology/blob/master/android.md#static-analysis)
   - [Cryptography and authentication](https://github.com/Bengman/Methodology/blob/master/android.md#cryptography-and-authentication)
   - [Leaked secrets](https://github.com/Bengman/Methodology/blob/master/android.md#leaked_secrets)
   - [Insecure connections](https://github.com/Bengman/Methodology/blob/master/android.md#insecure-connections)
   - [Insecure storage](https://github.com/Bengman/Methodology/blob/master/android.md#insecure-storage)
   - [Find interesting endpoints](https://github.com/Bengman/Methodology/blob/master/android.md#find-endpoints )
-+ [Dynamic analysis](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis)
++ [Dynamic Analysis with Drozer & adb](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis-with-drozer--adb)
   - [Audit content providers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-content-providers)
   - [Audit activities](https://github.com/Bengman/Methodology/blob/master/android.md#audit-activitis)
   - [Audit services](https://github.com/Bengman/Methodology/blob/master/android.md#audit-services)
@@ -22,6 +23,7 @@
   - [Audit deep links](https://github.com/Bengman/Methodology/blob/master/android.md#audit-deep-links)
   - [Audit logging](https://github.com/Bengman/Methodology/blob/master/android.md#audit-logging)
   - [Audit execution flow with Frida](https://github.com/Bengman/Methodology/blob/master/android.md#audit_execution_flow_with_frida)
++ [Dynamic Analysis with Frida](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis-with-frida)
 
 
 
