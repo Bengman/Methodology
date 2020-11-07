@@ -52,7 +52,8 @@
 - [ ] Getting Drozer to work in latest Kali
 ```
 wget https://github.com/FSecureLABS/drozer/releases/download/2.4.4/drozer-2.4.4-py2-none-any.whl
-apt-get --assume-yes install python-pip
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python2.7 get-pip.py
 pip2 install wheel
 pip2 install pyyaml
 pip2 install pyhamcrest
@@ -156,12 +157,12 @@ sudo service hostapd stop
 - [ ] TODO 
 
 # Static Analysis
-
-- [ ] Unpack the apk file.
+- [ ] Install requered tools. `sudo apt install dex2jar jadx jd-gui apktool`
+- [ ] Unpack the apk file using aptool. `apktool d <apk file>` 
+- [ ] Alternatively unpack the apk-file with zip and dex2jar
 ```
-apktool d <apk file>
-sh d2j-dex2jar.sh com.package.name.apk
-jd-gui
+unzip <apk file>
+d2j-dex2jar -o classes.jar classes.dex
 ```
 
 ### Cryptography and authentication
@@ -277,7 +278,8 @@ Looking for an easy way to open arbitrary URLs in Android apps?
 
 ## Audit Services
 (from Drozer)
-- [ ] Interact with services `run app.service.info -a com.mwr.example.sieve`
+- [ ] List available services `run app.service.info -a com.mwr.example.sieve`
+- [ ] Interact with services (todo)
 
 ## Audit Broadcast recievers
 - [ ] TODO
