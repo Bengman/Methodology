@@ -95,3 +95,4 @@
 - https://www.allysonomalley.com/
 - https://medium.com/@yogendra_h1/ios-application-security-jailbreak-12-4-5e3fc0dc0726
 - https://zeroinformationsecurity.wordpress.com/2020/05/07/the-only-way-to-bypass-ssl-pinning-on-ios-13/
+- https://github.com/0x3c3e/iOS-re
