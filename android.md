@@ -14,7 +14,7 @@
   - [Leaked secrets](https://github.com/Bengman/Methodology/blob/master/android.md#leaked_secrets)
   - [Insecure connections](https://github.com/Bengman/Methodology/blob/master/android.md#insecure-connections)
   - [Insecure storage](https://github.com/Bengman/Methodology/blob/master/android.md#insecure-storage)
-  - [Find interesting endpoints](https://github.com/Bengman/Methodology/blob/master/android.md#find-endpoints )
+  - [Find API endpoints](https://github.com/Bengman/Methodology/blob/master/android.md#find-api-endpoints)
 + [Dynamic Analysis with Drozer & adb](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis-with-drozer--adb)
   - [Audit content providers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-content-providers)
   - [Audit activities](https://github.com/Bengman/Methodology/blob/master/android.md#audit-activitis)
@@ -22,7 +22,6 @@
   - [Audit broadcast recievers](https://github.com/Bengman/Methodology/blob/master/android.md#audit-broadcast-recievers)
   - [Audit deep links](https://github.com/Bengman/Methodology/blob/master/android.md#audit-deep-links)
   - [Audit logging](https://github.com/Bengman/Methodology/blob/master/android.md#audit-logging)
-  - [Audit execution flow with Frida](https://github.com/Bengman/Methodology/blob/master/android.md#audit_execution_flow_with_frida)
 + [Dynamic Analysis with Frida](https://github.com/Bengman/Methodology/blob/master/android.md#dynamic-analysis-with-frida)
 
 
