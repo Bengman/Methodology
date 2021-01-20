@@ -10,6 +10,7 @@ If we could inject an HTML tag to the conversion process, in some libraries, we 
 - [ ] Test object tags for LFI: 
 - [ ] Test fonts (CSS) tags for LFI: 
 - [ ] Test <link> for LFI. Create an html on an attacker controlled box with the following link tag: `<link rel=attachment href=”file:///etc/passwd”>` (need to unpack the PDF)
+- [ ] If accessing file:/// through iframes are blocked point the iframe on an external server who makes a 302 redirect and the Location: file:///.
 
 
 ## SSRF
