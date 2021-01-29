@@ -263,6 +263,10 @@ network protocols.
 apktool d app.apk; cd app;mkdir collection; find . -name \*.smali -exec sh -c 'cp "$1" collection/$(head /dev/urandom | md5 | cut -d" " -f1).smali' _ {} \;; linkfinder.py -i 'collection/*.smali' -o cli
 ```
 
+### Insucure command execution
+- [ ] Is the application executing system commands? Look for `Runtime.exec()`, `ProcessBuilder` and `Native code: System()` API-calls.
+- [ ] Can we control the input to these calls?
+
 ### Automated static analysis with MobSF
 - [ ] Run the .apk in MobSF
 
@@ -310,6 +314,8 @@ Looking for an easy way to open arbitrary URLs in Android apps?
 - [ ] Repeat the same thing for iOS apps. Usually, functionality is similar, but actual implementations are different
     - That's how I found https://hackerone.com/reports/401793 and earned $7.5k
     - https://twitter.com/_bagipro/status/1294972446135791616
+- [ ] Check for CSRF on deeplinks.
+    - https://hackerone.com/reports/583987
  
  
 ## Audit Logging
